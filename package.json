@@ -1,0 +1,29 @@
+{
+  "name": "m3u-server",
+  "description": "Media files streaming server",
+  "version": "0.0.1",
+  "files": [
+    "dist/**"
+  ],
+  "bin": {
+    "m3u-server": "dist/main.js"
+  },
+  "scripts": {
+    "build": "npm run clean && tsc && chmod +x dist/main.js",
+    "clean": "rm -rf dist",
+    "format": "prettier -w 'src/**/*.ts'",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@wzlin/ff": "^0.7.4",
+    "extlib": "^0.12.15",
+    "file-type": "^16.3.0",
+    "sacli": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/file-type": "^10.9.1",
+    "@types/node": "^14.14.34",
+    "prettier": "^2.2.1",
+    "typescript": "^4.2.3"
+  }
+}
